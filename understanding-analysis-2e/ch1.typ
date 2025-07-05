@@ -226,3 +226,222 @@ Consider $a in inter.big_(i=1)^infinity A_i^complement$.
 Then, for every $i in NN$, $a in A_i^complement$ or $a in.not A_i$.
 Thus, $a in.not union.big_(i=1)^infinity A_i$, implying $a in (union.big_(i=1)^infinity A_i)^complement$.
 $square$
+
+*Exercise 1.3.1*
+
+(a)
+A real number $s$ is the _greatest lower bound_ for a set $A subset.eq RR$ if it meets the following two criteria:
+#set enum(numbering: "(i)")
++ s is a lower bound for $A$;
++ if $l$ is any lower bound for $A$, then $l <= s$.
+
+(b)
+Assume $s in RR$ is an lower bound for a set $A subset.eq RR$.
+Then, $s = inf A$ if and only if, for every choice of $epsilon > 0$,
+there exists an element $a in A$ satisfying $s + epsilon > a$.
+
+($==>$) For the forward direction, we assume $s = inf A$ and consider $s + epsilon$,
+where $epsilon > 0$ has been arbitrarily chosen.
+Because $s + epsilon > s$, part (ii) implies that $s + epsilon$ is not lower bound.
+If this is the case, then there must be some element $a in A$ for which $a < s + epsilon$
+(because otherwise $s + epsilon$ would be a lower bound).
+
+($<==$) Conversely, assume $s$ is a lower bound with the property that no matter how $epsilon > 0$ is chosen,
+$s + e$ is no longer a lower bound for $A$.
+Notice that what this implies is that if $l$ is any number more than $s$,
+then $l$ is not a lower bound.
+Because we have just argued that any number more than $s$ cannot be a lower bound,
+it follows that if $l$ is some other lower bound for $A$,
+then $s >= l$.
+
+*Exercise 1.3.2*
+
+(a)
+Any B with one element satisfy $inf B >= sup B$.
+
+(b)
+The supremum of the finite set is its largest element.
+Therefore, it is impossible.
+
+(c)
+$S = {r in QQ : 0 < r <= 1}$
+
+*Exercise 1.3.3*
+
+(a)
+By the Axiom of Completeness,
+we know that $sup B$ exists since $B$ is bounded from above by any element of $A$.
+In order for $sup B = inf A$, $sup B$ must be lower bound of $A$ and for every lower bound $l$ of $A$,
+$l <= sup B$.
+Therefore, we only need to show that $sup B$ is a lower bound of $A$.
+Assume that there exist $a in A$ such that $a < sup B$.
+By *Lemma 1.3.8*, if we choose $epsilon = sup B - a$,
+there exists $b in B$ such that $sup B - epsilon = a < b$.
+It is a contradictions since $b$ is a lower bound of $A$.
+
+(b)
+By the Axiom of Completeness, $sup B$ exists,
+which is also the greatest lower bound of $A$.
+
+*Exercise 1.3.4*
+
+(a)
+$sup (A union B) >= sup A$ since $sup (A union B)$ is an upper bound of $A union B$ (and $A$).
+$sup (A union B) >= max(sup A, sup B)$.
+Moreover, every $c in A union B$ satisfies $c <= sup A$ or $c <= sup B$.
+Therefore, $c <= max(sup A, sup B)$, implying $sup (A union B) <= max(sup A, sup B)$.
+Thus, $sup (A union B) = max(sup A, sup B)$.
+
+We can even extend this to $sup (union.big_(k=1)^n A_k) = max(sup A_1, sup A_2, ..., sup A_n)$.
+
+(b)
+
+Since $union.big_(k=1)^infinity A_k$ can be unbounded, the supremum cannot exist.
+
+*Exercise 1.3.5*
+
+(a)
+Since $c a <= c sup A$ for every $a in A$,
+$c sup A$ is an upper bound of $c A$.
+
+Now, it is enough to show that for every $epsilon > 0$,
+there exist $a in A$ such that $c sup A - epsilon < c a$.
+Since $c = 0$ case is obvious, assume that $c > 0$.
+Then, it is enough to prove that for every $epsilon > 0$,
+there exists $a in A$ such that $sup A - epsilon / c < a$.
+Since $epsilon / c > 0$, the last statement is true by *Lemma 1.3.8*.
+
+(b)
+Now, $c a <= c inf A$ for every $a in A$.
+In other words, $c inf A$ is an upper bound of $c A$.
+In order to show that $c inf A = sup (c A)$,
+it is enough to prove that, for every $epsilon > 0$,
+there exists $a in A$ such that  $c inf A - epsilon < c a$.
+The last part is equivalent to $inf A + epsilon / (-c) > a$,
+which is true by *Exercise 1.3.1 (b)*.
+
+*Exercise 1.3.6*
+
+(a)
+Since, for every $a in A, b in B$, $a <= s$ and $b <= t$ by definition.
+From $a + b <= s + t$, we can see that $s + t$ is an upper bound.
+
+(b)
+Assume that $u$ is an upper bound of $A + B$.
+If we fix $a in A$, then, for every $b in B$, $a + b <= u$ or $b <= u - a$.
+Since $u - a$ is an upper bound of $B$, $t <= u - a$.
+
+(c)
+For every $a in A$, $t + a <= u$.
+Thus, $sup (t + A) = t + sup A = t + s <= u$ by *Example 1.3.7*.
+Finally, we proved that $sup (A + B) = s + t$ since $u >= t + s$ for every upper bound $u$.
+
+(d)
+Since $s + t$ is an upper bound of $A + B$,
+it is enough to prove that for every $epsilon > 0$,
+there exists $a in A, b in B$ such that $s + t - epsilon < a + b$.
+By *Lemma 1.3.8*, there exists $a in A$ such that $s - epsilon / 2 < a$ and $b in B$ such that $t - epsilon / 2 < b$.
+If we combine these, we achieve what we want.
+
+*Exercise 1.3.7*
+
+$sup A >= a$ since $sup A$ is an upper bound of A.
+Since $a$ is an upper bound of A, $a >= sup A$.
+Thus, $a = sup A$.
+
+*Exercise 1.3.8*
+
+(a)
+the supremum is 1.
+The infimum is 0.
+
+(b)
+The supremum is 1.
+The infimum is -1.
+
+(c)
+The supremum is $1/3$.
+The infimum is $1/4$.
+
+(d)
+The supremum is $1$.
+The infimum is $0$.
+
+*Exercise 1.3.9*
+
+(a)
+For every $epsilon > 0$,
+there exist $b in B$ such that $sup B - epsilon < b$.
+If $epsilon = sup B - sup A$, $sup A < b$.
+This b is an upper bound for $A$.
+
+(b)
+$A = [0, 1]$ and $B = [0, 1)$.
+There is no element of $B$ that is no less than 1.
+
+*Exercise 1.3.10*
+
+(a)
+There exist $sup A$ and $inf B$ by the Axiom of Completeness.
+Assume $sup A > inf B$.
+For every $epsilon_a > 0$,
+there exists $a in A$ such that $sup A - epsilon_a < a$.
+For every $epsilon_b > 0$,
+there exists $b in B$ such that $inf B + epsilon_b > b$.
+If we choose $epsilon_a = sup A - inf B$,
+there exists $a in A$ such that $inf B < a$.
+If we choose $epsilon_b = a - inf B$,
+there exists $b in B$ such that $a > b$.
+This is a contradiction.
+
+Now, assume $sup A < inf B$.
+Choose $c = (sup A + inf B) / 2$, which satisfies the following: $sup A < c < inf B$.
+Since $c$ is more than every element of A and less then every element of B,
+it is not in A and B.
+However, $A union B = RR$. This is a contraction.
+
+Therefore, $sup A = inf B$, which is also $c$.
+
+(b)
+
+$B = {b in RR | "there is no" e in E "such that" b < e}$.
+In other words, B is the set of upper bounds of E.
+
+$A = {a in RR | "there is" e in E "such that" a < e}$.
+
+$A union B = RR$. $A$ and $B$ are disjoint.
+For any $a in A, b in B$, there exists $e in E$ such that $a < e$.
+Since $b$ cannot be less than $e$ by its definition, $e <= b$.
+Thus, $a < b$. By the Cut Property, there exist $c in RR$ such that whenever $x in B$,
+$x >= c$. This $c$ is $sup E$.
+
+(c)
+Let $A = {a in QQ | a < sqrt(2)}$ and $B = {a in QQ | sqrt(2) <= b}$.
+A and B are nonempty, disjoint sets with $A union B = QQ$.
+Assume that there exists $c in QQ$ such that
+$x <= c$ whenever $x in A$ and
+$x >= c$ whenever $x in B$.
+$c$ cannot be $sqrt(2)$ since it is irrational number.
+Assume $c < sqrt(2)$,
+we can always pick $d in Q$, which satisfy $c < d < sqrt(2)$.
+Since $d in A$ ($d < sqrt(2)$), $d <= c$.
+This is contradication.
+We can reach similar contradiction when $c > sqrt(2)$.
+Therefore, the Cut Property is not a valid statement in $QQ$.
+
+*Exercise 1.3.11*
+
+(a)
+True.
+$sup B >= b$ for every $b in B$, which also true when $b in A$ since $A subset.eq B$.
+$sup B$ is an upper bound for $A$. Thus, $sup A <= sup B$.
+
+(b)
+True.
+$c = (sup A + inf B) / 2$, satisfies $a <= sup A < c < inf B <= b$ for every $a in A, b in B$.
+
+(c)
+False.
+Let $A = [0, 1)$, $B = (1, 2]$, and $c = 1$.
+$a < c < b$ for all $a in A$ and $b in B$.
+$sup A = 1 = inf B = 1$.
