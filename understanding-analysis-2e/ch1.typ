@@ -445,3 +445,97 @@ False.
 Let $A = [0, 1)$, $B = (1, 2]$, and $c = 1$.
 $a < c < b$ for all $a in A$ and $b in B$.
 $sup A = 1 = inf B = 1$.
+
+*Exercise 1.4.1*
+
+(a)
+There exist $a_1, a_2, b_1, b_2 in ZZ$ such that $a = a_1 / a_2 "and" b = b_1 / b_2$.
+
+$a b = (a_1 b_1) / (a_2 b_2) in QQ "since" a_1 b_1, a_2 b_2 in ZZ$.
+
+$a + b = (a_1 b_2 + a_2 b_1) / (a_2 b_2) in QQ "since" a_1 b_2 + a_2 b_1, a_2 b_2 in ZZ$.
+
+(b)
+$"If" a + t in QQ "and" a in QQ$, then $t in Q$. Thus, $a + t in II$.
+If $a t, a in QQ$ and $a != 0$. Then $(a t) / a = t in QQ$. Thus, $a t in II$.
+
+(c)
+If $s = -t = sqrt(2)$, $s + t = 0 "and" s t = -2$. Thus, $II$ is not closed under addition or multiplication.
+We can only say that $s + t "and" s t in RR$.
+
+*Exercise 1.4.2*
+
+For all $n in NN$, $sup A <= s + 1 / n$ and $s - 1 / n < sup A$.
+This is equivalent to $-1 / n <= s - sup A < 1 / n$, which implies $|s - sup A| <= 1 / n$.
+If $s != sup A$, then $|s - sup A| > 0$ and by *Theorem 1.4.2*, there must be $n in N$ satisfying $1 / n < |s - sup A|$.
+Thus, $s = sup A$.
+
+*Exercise 1.4.3*
+
+Assume $s in inter.big_(n=1)^infinity (0, 1 / n)$.
+Then, $0 < s < 1 / n$ for all $n in NN$.
+However, by *Theorem 1.4.2*, there exists $n in N$ such that $1 / n < s$.
+Thus, the intersection is empty.
+
+*Exercise 1.4.4*
+
+There exists $r in QQ$ such that $a < r < b$ by *Theorem 1.4.3*.
+Thus, $T$ is nonempty and bounded from above.
+$sup T <= b$ since $b$ is an upper bound of $T$.
+Also, note that $a < r <= sup T$.
+If $sup T < b$, there exists $q in QQ$ such that $sup T < q < b$.
+Also, $q in T$, which is leads to contradiction.
+Thus, $sup T = b$.
+
+*Exercise 1.4.5*
+
+By *Theorem 1.4.3*, there exists $r in QQ$ such that $a - sqrt(2) < r < b - sqrt(2)$ or $a < r + sqrt(2) < b$.
+By *Exercise 1.4.1*, $r + sqrt(2) in II$.
+
+*Exercise 1.4.6*
+
+(a)
+When $a = 0 "and" b = 1 / 11$, $0 < p / q < 1 / 11$, implying $0 < p$ and $11 p < q <= 10$.
+This is impossible. Thus, the set is not dense in $RR$.
+
+(b)
+There exists $n in NN$ satisying $1 / n < b - a$ and $q >= n$ where $q$ is a power of 2.
+It follows that $1 / q < b - a$ or $1 + a q < b q$.
+Choose $p in ZZ$ such that $a q < p <= a q + 1$.
+Then, $a q < p < b q$ or $a < p / q < b$.
+Thus, the set is dense in $RR$.
+
+(c)
+When $a = 0 "and" b = 0.1$, $0 < p / q < 0.1$, implying $0 < p "and" (10 p) / q < 1$.
+This is impossible. Thus, the set is not dense in $RR$.
+
+*Exercise 1.4.7*
+
+There exists $n_0 in NN$ such that $(alpha^2 - 2) / (2 alpha) > 1 / n_0$, $alpha^2 - 2 > (2 alpha) / n_0$ or $alpha^2 - (2 alpha) / n_0 > 2$.
+
+$2 < alpha^2 - (2 alpha) / n_0 < alpha^2 - (2 alpha) / n_0 + 1 / n_0^2 = (alpha - 1 / n_0)^2$.
+Thus, $alpha - 1 / n$ is an upper bound of $T$, which leads to contradiction.
+
+*Exercise 1.4.8*
+
+(a)
+$A = [0, 1) inter II "and" B = [0, 1) inter QQ$.
+$sup A = sup B = 1$.
+
+(b)
+Choose $J_i = (-1/n, 1/n)$. Then $inter.big_(n=1)^infinity J_n = {0}$.
+
+(c)
+$L_i = [i, infinity)$.
+Assume $a in inter.big_(n=1)^infinity$.
+There exists $n in NN$ satisfying $n > a$ and $a in L_n$, leading to contradiction.
+Thus, $inter.big_(n=1)^infinity L_n = emptyset$.
+
+(d)
+Define $J_i = inter.big_(n=1)^i I_n$.
+Then, $J_i != emptyset$.
+Since $J_(i+1) = J_i inter I_(n+1)$, $J_(i+1) subset.eq J_i$ and $J_i$ is closed interval.
+By *Theorem 1.4.1*, $inter.big_(n=1)^infinity J_n != emptyset$.
+Let's consider its element $j$.
+For all $n in NN$, $j in J_n = inter.big_(i=1)^n I_i$, implying $j in I_n$.
+Since $j in inter.big_(n=1)^infinity I_n$, the request is impossible.
