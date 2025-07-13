@@ -539,3 +539,201 @@ By *Theorem 1.4.1*, $inter.big_(n=1)^infinity J_n != emptyset$.
 Let's consider its element $j$.
 For all $n in NN$, $j in J_n = inter.big_(i=1)^n I_i$, implying $j in I_n$.
 Since $j in inter.big_(n=1)^infinity I_n$, the request is impossible.
+
+*Exercise 1.5.1*
+
+Define $g(k+1) = f(n_(k+1))$, where $n_(k+1) = min{n in N: f(n) in A "and" n > n_k}$.
+Note that $n_(k+1) > n_k$, implying that $n_i$ is an increasing sequence.
+Consider $a, b in N$ such that $a < b$.
+$g(a) = f(n_a), g(b) = f(n_b), "and" f(n_a) != f(n_b) "since" n_a < n_b$.
+Thus, $g(a) != g(b)$. In other words, $g$ is 1-1.
+Assume that $a in A$ and $f(n) = a$ for some $n in N$.
+By definition of $n_1$, $n >= n_1$.
+Assume that $n != n_i$ for every in $i in N$.
+Then, there exists $i$ such that $n_i < n < n_(i+1)$.
+However, this conflicts with the definition of $n_(i+1)$.
+Therefore, $n = n_i$ for some $i in N$.
+In other words, $g(i) = f(n_i) = f(n) = a$.
+Therefore, $g$ is 1-1 and onto.
+We can conclude that $A$ is countable.
+
+*Exercise 1.5.2*
+
+NIP implies $inter.big_(n=1)^infinity I_n != emptyset in RR ("not" in QQ$).
+
+*Exercise 1.5.3*
+
+(a) There exists 1-1 and onto function $f: NN -> A_1$.
+If $B_2$ is finite, assume that $B_2 = {b_1, b_2, ..., b_k}$.
+
+$g(i) = cases(
+  b_i "if" i <= k,
+  f(i-k) "else"
+)$
+
+$g: NN -> A_1 union A_2$ is 1-1 and onto function, implying $A_1 union A_2$ is countable.
+
+If $B_2$ is countable, there exists 1-1 and onto function $f': NN -> B_2$.
+
+$g(i) = cases(
+  f((i+1)/2) "if" i "is odd",
+  f'(i/2) "else"
+)$
+
+$g: NN -> A_1 union A_2$ is 1-1 and onto function, implying $A_1 union A_2$ is countable.
+
+
+(b)
+Induction is used to prove that a particular statement holds for every value of $n in N$, but this does not imply the validity of the infinite case.
+
+(c)
+We can define $R_i$ to be an countable set of every natural number in i-th row.
+Then $NN = union.big_(i=1)^infinity R_i$ and $R_i inter R_j = emptyset$ if $i != j$.
+There exist 1-1 and onto functions $f_i: R_i -> A_i$.
+Thus, we can create onto but not necessarily 1-1 function $g: union.big_(i=1)^infinity R_i -> union.big_(i=1)^infinity A_i$ or $g: NN -> union.big_(i=1)^infinity A_i$.
+Based on $g$, we can define onto and 1-1 function $g': NN -> union.big_(i=1)^infinity A_i$: $g'(1) = g(1)$ and $g'(i+1) = g(min {n: NN | g(n) in.not {g'(1), g'(2), ..., g'(i)}})$.
+Therefore, $union.big_(i=1)^infinity A_i$ is countable.
+
+*Exercise 1.5.4*
+
+(a)
+$f(x) = y / (1 - y^2)$ where $y = (2 x - (a + b)) / (b-a) "and" x in (a, b)$ is 1-1 and onto function from $(a, b) -> RR$.
+
+(b)
+$f(x) = y / (1 - y^2)$ where $y = (x - a - 1) / (x - a + 1)$ and $x in (a, infinity)$ is 1-1 and onto function from $(a, infinity) -> RR$.
+
+(c)
+Define $g(x) = cases(
+  1 - 1/(i+1) "if" x = 1 - 1/i "where" i in N,
+  x "else"
+)$
+
+$g(x)$ essentially shifts $1 - 1/i$ where $i in N$ and it is 1-1 and onto.
+$g(0) = g(1 - 1/1) = 1 - 1/2 = 1/2$. Therefore, $g: [0, 1) -> (0, 1)$.
+
+*Exercise 1.5.5*
+
+(a)
+Consider $f(a) = a$ for every $a in A$.
+$f$ is 1-1 and onto.
+Thus, $A ~ A$.
+
+(b)
+If $A ~ B$, there exists $f: A -> B$ where $f$ is 1-1 and onto.
+Define $g: B -> A$ where $g(b) = a "if" f(a) = b$.
+$g(b)$ is well-defined since $f(a_1) != f(a_2)$ if $a_1 != a_2$.
+$f$ is defined on $A$ so $g$ is onto.
+If $g(b_1) = g(b_2) = a$, $f(a) = b_1 = b_2$.
+Thus, $g$ is 1-1.
+Therefore, $g$ defines one to one correspondence between $B$ and $A$.
+
+(c)
+There exist $f: A -> B$ and $g: B -> C$, where $f$ and $g$ are both 1-1 and onto.
+Define $h(a) = g(f(a))$ for every $a in A$.
+For every $c in C$, there exists $b in B$ such that $g(b) = c$.
+Also, there exists $a in A$ such that $f(a) = b$.
+Since $g(f(a)) = c$, $h$ is onto.
+Assume $h(a_1) != h(a_2)$ or $g(f(a_1)) != g(f(a_2))$.
+Since $g$ is 1-1, $f(a_1) != f(a_2)$, from which we can also conclude $a_1 != a_2$.
+Thus, $h$ is 1-1 and onto function from $A -> C$.
+Therefore, $A ~ C$.
+
+*Exercise 1.5.6*
+
+(a)
+$(n, n+1)$ where $n in NN$.
+
+(b)
+By *Theorem 1.4.3*, there exists a rational number in each interval.
+If such collection exists, we end up with an uncountable collection of rational numbers.
+This contradics the fact that the $QQ ~ NN$.
+Thus, no such collection exists.
+
+*Exercise 1.5.7*
+
+(a)
+$f(x) = (x, 0)$ is 1-1 but not onto function.
+
+(b)
+Define $f: S -> (0, 1)$ such that $f((x, y)) = 0.x_1 y_1 x_2 y_2...$ where $x = 0.x_1 x_2 ...$ and $y = 0.y_1 y_2 ...$.
+The function is 1-1 since $f((a, b)) = f((c, d))$, then $a = c "and" b = d$.
+This function is not onto since there is no $x, y$ such that $f((x, y)) = 0.1$, which forces $y = 0$.
+
+*Exercise 1.5.8*
+
+Define $A_q = (q, 2] inter B$.
+$A_q$ is finite set since, otherwise, we can just pick enough elements whose sum exceeds 2.
+Note that for every $b in B$, we can pick $q in QQ$ such that $0 < q < b$ by *Theorem 1.4.3*.
+$B = union.big_(q > 0) A_q$.
+The countable union of finite set cannot be uncountable.
+Thus, $B$ must be finite or countable.
+
+*Exercise 1.5.9*
+
+(a)
+$x^2 - 2 = 0$, $x^3 - 2$, and $(x^2 + 1)^2 - 12x^2$.
+
+(b)
+Define $f((a_n, a_(n-1), ..., a_1, a_0)) = a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0$, where $a_i in ZZ$ and $a_n != 0$.
+Let's use an induction to prove that the set of $(a_n, a_(n-1), ..., a_0)$ is countable set.
+When $n = 0$, set of $a_0$ is countable since it is subset of $ZZ$, which is countable (*Theorem 1.5.7*).
+Define $B_i = (a_n, a_(n-1), ..., a_1, i)$ for every $i in Z$.
+By induction hypothesis, $B_i$ is countable.
+Then, it is easy to see that set of $(a_n, a_(n-1), ..., a_0) = union.big_(i in ZZ) B_i$.
+Since $ZZ~NN$, the union is countable by *Theorem 1.5.8*.
+For each element of $B_n$, we have finite solutions.
+$A_n = union.big_(b in B_n) {"finite solutions of" b}$, which is countable since $A_n$ is not finite (consider $x^n - z^n$ where $z in ZZ$).
+
+(c)
+$C = union.big_(n=1)^infinity A_n$ is countable.
+Thus set of all algebraic numbers is countable.
+Since $RR$ is uncountable, $RR \\ C$ is uncountable, which is set of transendental numbers.
+
+*Exercise 1.5.10*
+
+(a)
+Assume that for every $a in (0, 1)$, $C inter [a, 1]$ is countable or finite.
+Define $C_q = C inter [q, 1]$. $C \\ {0} = union.big_(q in Q inter (0, 1)) C_q$
+since there exists $q in QQ$ such that $0 < q < r$ for every $r in C\\{0}$.
+Thus, $C \\ {0}$ is countable or finite, which contradicts $C$ is uncountable.
+
+(b)
+Choose $C = [0, 1/2]$.
+Then, $A = (0, 1/2) "and" sup A = 1/2$.
+$C inter [1/2, 1] = {1/2}$, which is a finite set.
+
+(c)
+$C = {1/n | n in NN}$ is infinite set in $[0, 1]$.
+For every $a in (0, 1)$, there exists $n in NN$ such that $1/n < a$.
+Thus, $C inter [a, 1]$ has at most n-1 elements.
+(a) doesn't remain true.
+
+*Exercise 1.5.11*
+
+(a)
+
+Define $h = cases(
+  f(a) "if" a in A,
+  g^(-1)(a) "if" a in A'
+)$
+
+Then, $h: X -> Y$ is 1-1 and onto and hence $X ~ Y$.
+
+(b)
+If $A_1 = emptyset$, $g(Y) = X "or" Y ~ X$.
+Define $B_i = f(A_i)$.
+It is enough to prove that $A_(n+1) = g(f(A_n))$ is pairwisely disjoint with ${A_1, A_2, ..., A_n}$ and same property for $B_(n+1)$ follows from it since $f$ is 1-1 function.
+Since {B_1, B_2, ..., B_n} are a pairwise disjoint by the induction hypothesis and $g$ is 1-1, ${A_2, A_3, ..., A_(n+1)}$ are a pairwise disjoint.
+Since $A_1 inter g(Y) = emptyset$, $A_1 inter g(f(A_n)) = emptyset$.
+Thus, the statement is proved.
+
+(c)
+Consider any $b in B = union.big_(n=1)^infinity B_n$.
+There exists $n in NN$ such that $b in B_n$ and there exists $a in A_n$ such that $f(a) = b$.
+Thus, $f$ maps $A$ onto $B$.
+
+(d)
+$A_1 union g(Y) = X$ and $g(Y) = g(B') union g(B)$.
+Thus, $A_1 union g(B) union g(B') = X$, where $g(A_1), g(B), "and" g(B')$ are pairwisely disjoint.
+Since $g(B) + g(A_1) = A$, $g(B') = A'$.
+Thus, $g$ maps $B'$ onto $A'$.
