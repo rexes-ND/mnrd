@@ -1,5 +1,4 @@
-
-*Exercise 1.2.1.*
+*Exercise 1.2.1*
 
 (a)
 For contradiction, let's assume that $exists p, q in ZZ : (p/q)^2 = 3$.
@@ -277,7 +276,7 @@ Therefore, we only need to show that $sup B$ is a lower bound of $A$.
 Assume that there exist $a in A$ such that $a < sup B$.
 By *Lemma 1.3.8*, if we choose $epsilon = sup B - a$,
 there exists $b in B$ such that $sup B - epsilon = a < b$.
-It is a contradictions since $b$ is a lower bound of $A$.
+It is a contradiction since $b$ is a lower bound of $A$.
 
 (b)
 By the Axiom of Completeness, $sup B$ exists,
@@ -398,7 +397,7 @@ Now, assume $sup A < inf B$.
 Choose $c = (sup A + inf B) / 2$, which satisfies the following: $sup A < c < inf B$.
 Since $c$ is more than every element of A and less then every element of B,
 it is not in A and B.
-However, $A union B = RR$. This is a contraction.
+However, $A union B = RR$. This is a contradiction.
 
 Therefore, $sup A = inf B$, which is also $c$.
 
@@ -425,7 +424,7 @@ $c$ cannot be $sqrt(2)$ since it is irrational number.
 Assume $c < sqrt(2)$,
 we can always pick $d in Q$, which satisfy $c < d < sqrt(2)$.
 Since $d in A$ ($d < sqrt(2)$), $d <= c$.
-This is contradication.
+This is contradiction.
 We can reach similar contradiction when $c > sqrt(2)$.
 Therefore, the Cut Property is not a valid statement in $QQ$.
 
@@ -737,3 +736,92 @@ $A_1 union g(Y) = X$ and $g(Y) = g(B') union g(B)$.
 Thus, $A_1 union g(B) union g(B') = X$, where $g(A_1), g(B), "and" g(B')$ are pairwisely disjoint.
 Since $g(B) + g(A_1) = A$, $g(B') = A'$.
 Thus, $g$ maps $B'$ onto $A'$.
+
+*Exercise 1.6.1*
+
+It is enough to show that there exists 1-1, onto function $f: (0, 1) -> RR$.
+$f = (2 x - 1) / (1 - (2 x - 1)^2)$ satisfies our requirement.
+
+*Exercise 1.6.2*
+
+(a)
+Note that $a_(n n) != b_n$.
+Thus, $x != f(1)$.
+
+(b)
+The proof is same as (a).
+
+(c)
+There is no $n in N$ such that $x = f(n)$.
+Thus, we can conclude that $x in RR$ is not in the list, which leads to contradiction.
+
+*Exercise 1.6.3*
+
+(a)
+$x$ can be irrational number.
+
+(b)
+In our case, we can fix the decimal representation to not have repeating 9 at the end.
+
+*Exercise 1.6.4*
+
+Assume that $S$ is countable and we list each element of $S$.
+Define $s = (s_0, s_1, ...)$, where $s_i = 1 - "i-th element of i-the sequence"$.
+If i-the sequence has less than i number of elements, we can set it to 0.
+$s in.not S$, which leads to contradiction.
+
+*Exercise 1.6.5*
+
+(a)
+$P(A) = {emptyset, {a}, {b}, {c}, {a, b}, {a, c}, {b, c}, {a, b, c}}$.
+
+(b)
+Each element can be in the subset or not, resulting in 2 ^ n possibility.
+
+*Exercise 1.6.6*
+
+(a)
+$f(a) = {a}$ or $g(a) = {b}, g(b) = {c}, "and" g(c) = {a}$.
+
+(b)
+$g(c) = {c}$.
+
+(c)
+Since $|A| < |P(A)|$, we can't contruct a mapping that is 1-1 and onto from $A$ into $P(A)$.
+
+*Exercise 1.6.7*
+
+For $f(a) = {a}$, $B = emptyset$.
+
+*Exercise 1.6.8*
+
+(a)
+If $a' in B$, $a' in f(a')$.
+Thus, $a' in.not B$, leading to contradiction.
+
+(b)
+If $a' in.not B$, $a' in.not f(a')$.
+Thus, $a' in B$, leading to contradiction.
+
+*Exercise 1.6.9*
+
+Let's use the sequence $S$ from *Exercise 1.6.4*.
+Each $s in P(NN)$ represents a sequence where its i-th element of indicate if $i in s$.
+Thus, $P(NN) ~ S$.
+If we consider denote the binary expansion of $RR$, each $r in RR$ has exactly one representation in $S$ if we don't have repeating 1s at the end.
+Thus, $RR ~ S$.
+Therefore, $RR ~ P(NN)$.
+
+*Exercise 1.6.10*
+
+(a)
+$0, 1$ map to any $x, y in NN$.
+The set has the same cardinality as $NN^2$, which has a same cardinality as $N$.
+Thus, the set is countable.
+
+(b)
+The set has the same cardinality as $S$ from *Exercise 1.6.9*, where each sequence correspond to one function in the set.
+We have shown that $S ~ R$, which is uncountable.
+
+(c)
+*TODO*
