@@ -111,3 +111,213 @@ Thus, the sequence can be not zero-heavy.
 
 (d)
 A sequence is not zero-heavy if for every $M in NN$, there exists $N in NN$ such that $x_n != 0$ for all $n$ satisfying $N <= n <= N + M$.
+
+*Exercise 2.3.1*
+
+(a)
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that for every $n >= N$, $|x_n - 0| < epsilon^2$ or $|sqrt(x_n) - 0| < epsilon$ as needed.
+
+(b)
+By *Theorem 2.3.4*, $x >= 0$.
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that $|x_n - x| < epsilon^2$ for every $n >= N$.
+$epsilon^2 > |sqrt(x_n) - sqrt(x)| (sqrt(x_n) + sqrt(x)) >= (sqrt(x_n) - sqrt(x))^2$ or $epsilon > |sqrt(x_n) - sqrt(x)|$ as needed.
+
+
+*Exercise 2.3.2*
+
+(a)
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that $|x_n - 2| < 3/2 epsilon$ for every $n >= N$.
+$|(2 x_n - 4) / 3| < epsilon$ or $|(2 x_n - 1) / 3 - 1| < epsilon$ as desired.
+
+(b)
+Let $epsilon > 0$ be arbitrary.
+There exists $N_1 in NN$ such that $|x_n - 2| < 3/2$ for every $n >= N_1$.
+There exists $N_2 in NN$ such that $|x_n - 2| < epsilon$ for every $n >= N_2$.
+Since $|x_n - 2| < 3/2$, $|x_n| > 1/2$.
+For every $n >= max(N_1, N_2)$, $|1/x_n - 1/2| = (|x_n - 2|)/(2 |x_n|) < epsilon/(2 * 1/2) = epsilon$ as desired.
+
+*Exercise 2.3.3*
+
+Let $epsilon > 0$ be arbitrary.
+There exists $N_1 in NN$ such that $|x_n - l| < epsilon$ for $n >= N_1$.
+There exists $N_2 in NN$ such that $|z_n - l| < epsilon$ for $n >= N_2$.
+For every $n >= max(N_1, N_2)$, $l - epsilon < x_n <= y_n <= z_n < l + epsilon$ or $|y_n - l| < epsilon$ as desired.
+
+*Exercise 2.3.4*
+
+(a)
+$lim (1 + a_n) = 1 "and" lim (1 + 3 a_n - 4 a_n^2) = 1$.
+Thus, $lim ((1 + 2 a_n)/(1 + 3 a_n - 4 a_n^2)) = 1 / 1 = 1$.
+
+(b)
+$lim (((a_n + 2)^2 - 4)/a_n) = lim ((a_n (a_n + 4)) / a_n) = lim (a_n + 4) = 4$.
+
+(c)
+$lim ((2/a_n + 3)/(1/a_n+5)) = lim ((2 + 3 a_n)/(1 + 5 a_n)) = 2$.
+
+*Exercise 2.3.5*
+
+Assume that $lim x_n = lim y_n = l$.
+There exists $N_1 in NN$ such that $|x_n - l| < epsilon$ for $n >= N_1$.
+Also, there exists $N_2 in NN$ such that $|y_n - l| < epsilon$ for $n >= N_2$.
+If we choose $N >= max(2 N_1 - 1, 2 N_2)$, $|z_n - l| < epsilon$ for $n >= N$ as desired.
+
+Now, assume that $(x_1, y_1, x_2, y_2, ..., x_n, y_n, ...)$ and $lim z_n = l$.
+Let $epsilon > 0$ be arbirary.
+There exists $N in NN$ such that $|z_n - l| < epsilon$ for every $n >= N$.
+We can assume that ${z_N, x_(N+1)} = {x_N_1, y_N_2}$.
+For every $n >= N_1$, $|x_n - l| < epsilon$.
+For every $n >= N_2$, $|y_n - l| < epsilon$.
+Thus, $lim x_n = lim y_n = l$.
+
+*Exercise 2.3.6*
+
+$x_n = 1 + 2/n$. Since $x_n >= 0 "and" (x_n) -> 1$, $sqrt(x_n) -> 1$.
+$b_n = n - sqrt(n^2 + 2 n) = (n^2 - n^2 - 2 n) / (n + sqrt(n^2 + 2 n)) = (-2n)/(n+sqrt(n^2 + 2 n)) = (-2)/(1 + sqrt(1 + 2/n)) = (-2) / 2 = -1$.
+
+*Exercise 2.3.7*
+
+(a)
+$(x_n) = {1, -1, 1, -1, ...}$ and $(y_n) = {-1, 1, -1, 1, ...}$.
+
+(b)
+Assume that $lim x_n = x "and" lim (x_n + y_n) = z$.
+By *Theorem 2.3.3*, $lim (-x_n) = -x$ and $lim (x_n + y_n + (-x_n)) = lim (x_n + y_n) + lim (-x_n) = z - x$.
+Thus, the request is impossible.
+
+(c)
+Consider $b_n = 1/n$.
+
+(d)
+Assume that the both $(b_n) "and" (a_n - b_n)$ are bounded.
+Then, there exist $M_1, M_2 in NN$ such that $|b_n| <= M_1 "and" |a_n - b_n| <= M_2$.
+Since $M_1 + M_2 >= |a_n - b_n| + |b_n| >= |a_n|$, $(a_n)$ is bounded, leading to contradiction.
+Thus, the request is impossible.
+
+(e)
+Consider $a_n = 1/n "and" b_n = n$.
+
+*Exercise 2.3.8*
+
+(a)
+By *Theorem 2.3.3*,
+$lim (x_n^k) = lim (x_n^(k-1)) lim (x_n) = ... = (lim (x_n))^k = x^k$.
+Also, $lim (p_k x_n^k) = p_k lim (x_n^k) = p_k x^k$.
+Thus, $lim (p(x_n)) = lim(p_k x_n^k) + lim(p_(k-1) x_n^(k-1)) + ... + lim(p_1 x_n) + p_0$ = $p_k x^k + p_(k-1) x^(k-1) + ... + p_1 x + p_0 = p(x)$.
+
+(b)
+$x_n = 1/n "and" f(x) = cases(
+  1 "if" x != 0,
+  0 "else"
+)$. For every $n in N$, $|f(x_n) - 1| = |f(1/n) - 1| = 0$.
+Thus, $f(x_n)$ converges to 1. However, $f(0) = 0 != 1 = lim f(x_n)$.
+
+*Exercise 2.3.9*
+
+(a)
+Since we don't know if $lim a_n$ exists, we are not allowed to use the Algebraic Limit Theorem.
+Let $epsilon > 0$ be arbitrary.
+There exists $M > 0$ such that $|a_n| <= M$.
+There exists $N in NN$ such that $|b_n| < epsilon / M$ for every $n >= N_1$.
+There exists $|a_n b_n| = |a_n||b_n| < M epsilon / M = epsilon$ as desired.
+Thus, $lim (a_n b_n) = 0$.
+
+(b)
+$(a_n b_n)$ can be divergent.
+Consider $a_n = (-1)^n a$ and $b_n = b$.
+
+(c)
+Since $lim a_n = 0 "and" b_n$ is bounded, $lim (a_n b_n) = 0$ by (a).
+
+*Exercise 2.3.10*
+
+(a)
+False. Consider $a_n = n "and" b_n = -n$.
+
+(b)
+True.
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that
+$||b_n| - |b|| <= |b_n - b| < epsilon$ for $n >= N$ as desired.
+
+(c)
+False when $a != 0$.
+By *Theorem 2.3.3*, $lim (b_n) = lim (b_n - a_n) + lim (a_n) = 0 + 0 = 0$.
+
+(d)
+True.
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that
+$epsilon > |a_n - 0| = |a_n| >= |b_n - b|$ as desired.
+
+*Exercise 2.3.11*
+
+(a)
+Since $(x_n)$ is convergent, it is bounded.
+Let $lim x_n = x$.
+There exists $M in NN$ such that $|x_n - x| <= M$.
+Let $epsilon > 0$ be arbitrary.
+Choose any $epsilon_0 < min(epsilon, M)$.
+There exists $N in NN$ such that $|x_n - x| < epsilon_0$.
+$|y_n - x| = |(x_1 + x_2 + ... + x_n)/n - x | <= (|x_1 - x| + ... + |x_n - x|)/n < ((N - 1)M + (n - N + 1)epsilon_0)/n = ((N-1)(M-epsilon_0))/n + epsilon_0$, which is less than $epsilon$ for $n >= ((N - 1)(M - epsilon_0))/(epsilon - epsilon_0)$.
+
+(b)
+Consider $x_n = (-1)^n$.
+
+*Exercise 2.3.12*
+
+(a)
+True. Since $sup B <= a_i$, $sup B <= a$ by *Theorem 2.3.4*.
+Thus, $a$ is an upper bound.
+
+(b)
+False. Consider $a_n = -1/n$.
+
+(c)
+False. $a_1 = 1$ and $a_(n+1) = a_n + 1/k$ where $k$ is the smallest possible natural number such that $a_(n+1) < sqrt(2)$.
+$a = sqrt(2)$, which is not rational.
+
+*Exercise 2.3.13*
+
+(a)
+
+$lim_(n->infinity) (lim_(m->infinity) a_(m n))
+= lim_(n->infinity) (lim_(m->infinity) m/(m+n))
+= lim_(n->infinity) (lim_(m->infinity) 1/(1+n/m)) = 1$.
+
+$lim_(m->infinity) (lim_(n->infinity) a_(m n))
+= lim_(m->infinity) (lim_(n->infinity) m/(m+n))
+= lim_(m->infinity) (lim_(n->infinity) (m/n)/(m/n+1)) = 0$.
+
+(b)
+Let $epsilon > 0$ be arbitrary.
+Choose $N in NN$ such that $N > 1 / (2 epsilon)$.
+For every $m,n >= N$,
+$|a_(m n) - 0| = |1 / (m+n)| <= |1 / (2 N)| < epsilon$.
+Thus, $lim_(m,n -> infinity) a_(m n) = 0$.
+
+In the case of $a_(m n) = (m n)/(m^2 + n^2)$,
+first two limits are 0 and 0
+since $(m n)/(m^2 + n^2) = (n/m) / (1 + n^2/m^2)$.
+
+When $m = n$, $a_(m n) = 1/2$.
+When $m = 2 n$, $a_(m n) = 2/5$.
+Thus, $lim_(m,n -> infinity) a_(m n)$ doesn't exist.
+
+(c)
+$a_(m n) = (-1)^n/m + (-1)^m/n$.
+
+(d)
+Let $epsilon > 0$ be arbitrary.
+There exists $N_1 in NN$ such that $|a_(m n) - a| < epsilon/2$ for every $m, n >= N_1$.
+There exists $N_2 in NN$ such that $|a_(m n) - b_m| < epsilon/2$ for every $n >= N_2$.
+For every $m, n >= max(N_1, N_2)$,
+$|b_m - a| <= |a_(m n) - a| + |b_m - a_(m n)| < epsilon$.
+Thus, $lim_(m->infinity) b_m = a$.
+
+(e)
+Let $lim_(m,n -> infinity) a_(m n) = a, b_m = lim_(n->infinity) a_(m n), "and" c_n = lim_(n->infinity) a_(m n)$.
+Using (d), $lim_(m->infinity) b_m = a$ and $lim_(n->infinity) c_n = a$ as desired.
