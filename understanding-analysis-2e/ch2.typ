@@ -321,3 +321,151 @@ Thus, $lim_(m->infinity) b_m = a$.
 (e)
 Let $lim_(m,n -> infinity) a_(m n) = a, b_m = lim_(n->infinity) a_(m n), "and" c_n = lim_(n->infinity) a_(m n)$.
 Using (d), $lim_(m->infinity) b_m = a$ and $lim_(n->infinity) c_n = a$ as desired.
+
+*Exercise 2.4.1*
+
+(a)
+By *Theorem 2.4.2*, it is enough to prove that the sequence is decreasing and positive.
+$x_2 = 1 <= x_1$ and $x_1, x_2 > 0$.
+If $x_n, x_(n+1) > 0$ and $x_(n+1) <= x_n$, $x_(n+2) = 1 / (4-x_(n+1)) <= 1 / (4-x_n) = x_(n+1)$
+(note that $x_n <= x_1 <= 3$). Since $x_(n+1) <= 3$, $x_(n+2) > 0$.
+Thus, the sequence is decreasing and bounded ($>0$).
+
+(b)
+Since $x_(n+1)$ is also decreasing and bounded, $lim x_(n+1)$ must also exist.
+
+(c)
+$l = lim x_n$ = $lim x_(n+1)$ = $1 / (4 - l)$. $l = 2 - sqrt(3)$ since $2 + sqrt(3) > 3$.
+
+*Exercise 2.4.2*
+
+(a)
+Assuming that $lim y_n$ exists before proving that $(y_n)$ converges is wrong.
+
+(b)
+To show the convergence, it is enough to show that $y_(n+1) >= y_n$ and $y_n < 3$.
+$y_(n+2) = 3 - 1/y_(n+1) >= 3 - 1/y_n = y_(n+1)$. Since $y_n >= y_1 = 1$, $y_(n+1) = 3 - 1/y_n < 3$, $y_n < 3$.
+Thus, we can use the strategy.
+
+*Exercise 2.4.3*
+
+(a)
+The sequence is defined by $a_1 = sqrt(2) "and" a_(n+1) = sqrt(2 + a_n)$.
+To show the convergence, it is enough to show that $a_n <= 2$ and $a_n <= a_(n+1)$.
+By the induction, $a_(n+1) = sqrt(2 + a_n) <= sqrt(2 + 2) = 2$.
+Also, $a_(n+1) = sqrt(2 + a_n) <= sqrt(2 + a_(n+1)) = a_(n+2)$.
+Thus, the sequence converges.
+Since $a_n + 2 >= 0$, $lim sqrt(a_n + 2) = sqrt(lim a_n + 2) = lim a_n$.
+Let $a = lim a_n$.
+Then, $a^2 = a + 2$.
+Thus, $a = -1 "or" a = 2$.
+Since $a_n >= 0$, $lim a_n = 2$.
+
+(b)
+The sequence is defined by $a_1 = sqrt(2) "and" a_(n+1) = sqrt(2 a_n)$.
+If $a_n <= 2$, $a_(n+1) = sqrt(2 a_n) <= 2$. Thus, $a_n <= 2$.
+If $a_n <= a_(n+1)$, $a_(n+1) = sqrt(2 a_n) <= sqrt(2 a_(n+1)) = a_(n+2)$.
+Thus, $(a_n)$ converges.
+Let $a = lim a_n$.
+Since $2 a_n >= 0$, $lim sqrt(2 a_n) =sqrt(2 lim a_n) = sqrt(2 a) = a$.
+Thus, $a = lim a_n = 2$.
+
+*Exercise 2.4.4*
+
+(a)
+Let $a_n = r / n$.
+$lim a_n = r lim 1 / n = 0$.
+Let $epsilon > 0$ be arbitrary.
+There exists $N in NN$ such that $|r/n| < epsilon$ for every $n >= N$.
+$(|r|) / epsilon < n$, where we can choose $epsilon = 1$.
+Thus, there exists $n in NN$ such that $r <= |r| < n$.
+
+(b)
+Since $a_n, b_n$ are bounded and monotone sequences, both $lim a_n "and" lim b_n$ exist.
+Since $a_n <= b_n$, $lim a_n <= lim b_n$.
+Thus, any number in $[lim a_n, lim b_n]$ exists in intersection.
+
+*Exercise 2.4.5*
+
+(a)
+If $x_n^2 >= 2$, $x_(n+1)^2 = 1/4 (x_n^2 + 4 + 4/x_n^2) = 1/4 ((x_n - 2/x_n)^2 + 8) >= 2$.
+$x_(n+1)^2 + 6 <= 4 x_(n+1)^2 = x_n^2 + 4 + 4 / x_n^2 <= x_n^2 + 6$.
+Thus, $x_(n+1)^2 <= x_n^2$ and since $x_n > 0$, $x_(n+1) <= x_n$.
+Thus, the sequence converges and let $x = lim x_n$.
+We obtain $x = plus.minus sqrt(2)$ by solving $x = 1/2 (x + 2 / x)$.
+Since $x_n >= 0$, $x = sqrt(2)$.
+
+(b)
+$x_(n+1) = 1/2(x_n + c / x_n)$ and let $x_1 > sqrt(c)$ be arbitrary.
+Follow the same steps as (a).
+
+*Exercise 2.4.6*
+
+(a)
+$sqrt(x y) <= (x + y)/ 2 <=> 0 <= (sqrt(x) - sqrt(y))^2/2$.
+
+(b)
+By (a), $0 <= x_n <= y_n$.
+$y_(n+1) = (x_n + y_n)/2 <= y_n$ and $0 <= y_(n+1)$.
+$x_(n+1) = sqrt(x_n y_n) >= x_n$ and $x_(n+1) <= y_(n+1) <= y_1$.
+Thus, both $x_n "and" y_n$ converge. Let $x = lim x_n "and" y = lim y_n$.
+$y = (x + y) / 2 <=> x = y$.
+
+*Exercise 2.4.7*
+
+(a)
+Since $y_n >= a_k$ for every $k >= n$, $y_n >= sup{a_k : k >= n} = y_(n+1)$.
+There exists $M in NN$ such that $a_n <= M$ for every $n in NN$.
+Thus, $y_n <= M$ for every $n in NN$.
+Since $y_n$ is decreasing and bounded, it converges.
+
+(b)
+$z_n = inf{a_k : k >= n}$ and we can show that $z_n <= z_(n+1)$.
+Thus, $z_n$ converges.
+
+(c)
+Since $z_n <= y_n$, $lim z_n <= lim y_n$ by *Theorem 2.3.4*.
+Consider $a_n = (-1)^n$, where $y_n = 1 "and" z_n = -1$.
+
+(d)
+Since $z_n <= a_n <= y_n$, if $lim z_n = lim y_n$, then $lim a_n = lim z_n = lim y_n$.
+Assume that $lim a_n$ exists. Since $a_n <= y_n$, $lim a_n = a <= y = lim y_n$.
+Assume that $a < y$.
+There exists $N_1 in NN$ such that $|a_n_1 - a| < (y - a)/3 => a_n_1 < a + (y-a)/3$ for every $n_1 >= N_1$.
+There exists $N_2 in NN$ such that $|y_n_2 - y| < (y - a)/3 => y_n_2 > y - (y-a)/3$ for every $n_2 >= N_2$.
+$a_n_1 < a + (y-a)/3 = y - 2*(y-a)/3 < y_n_2 - (y-a)/3$ for $n_1 >= N_1 "and" n_2 >= N_2$.
+If $N = max(N_1, N_2)$, $a_n < y_N - (y-a)/3$ for $n >= N$, which contradicts the definition of $y_N$.
+Thus, $lim a_n = lim y_n$ and $lim a_n = lim z_n$ can be proven in similar manner.
+
+*Exercise 2.4.8*
+
+(a)
+$s_n = 1/2 + ... 1/2^n = 1 - 1/2^n$. $lim s_n = 1 - 0 = 1$.
+
+(b)
+$s_n = 1/(1 * 2) + 1/(2 * 3) + ... + 1/(n * (n+1)) = 1 - 1/2 + 1/2 - 1/3 + ... + 1/n - 1/(n+1) = 1 - 1/(n+1)$.
+$lim s_n = 1 - 0 = 1$.
+
+(c)
+$s_n = log(2/1) + log(3/2) + ... + log((n+1)/n) = log(2) - log(1) + log(3) - log(2) + ... + log(n+1) - log(n) = log(n+1)$.
+The series doesn't converge.
+
+*Exercise 2.4.9*
+
+$t_k = b_1 + 2 b_2 + 4 b_4 + 8 b_8 + ... + 2^k b_(2^k)
+<= b_1 + 2 b_2 + (2 b_3 + 2 b_4) + (2 b_5 + 2 b_6 + 2 b_7 + 2 b_8) + ... + (2 b_(2^(k-1) + 1) + 2 b_(2^(k-1)+2) + ... + 2 b_(2^k))
+= 2 s_(2^k) - b_1$.
+Since we assumed $t_k$ is divergent, for any $M in NN$, there exists $t_k > M$.
+Thus, $s_n$ is not bounded. In other words, $s_n$ is divergent.
+
+*Exercise 2.4.10*
+
+(a)
+$p_m = (2 / 1)(3 / 2) ... ((n+1)/n) = n+1$. Thus, the sequence is divergent.
+
+(b)
+$s_n = a_1 + a_2 + ... + a_n < p_n = (1 + a_1)(1 + a_2) ... (1 + a_n) <= 3^(s_n) = 3^(a_1 + a_2 + ... + a_n)$.
+If $s_n$ converges, there exists $M in NN$ such that $s_n <= M$.
+Then, $p_n <= 3^s_n = 3^M$ as desired.
+If $p_n$ converges, there exists $M in NN$ such that $p_n <= M$.
+Then, $s_n < p_n = M$ as desired.
